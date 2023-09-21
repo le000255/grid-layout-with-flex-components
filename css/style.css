@@ -1,6 +1,10 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: #222;
+
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 0 1rem;
 }
 
 .emoji {
@@ -16,7 +20,7 @@ body {
 
 .emoji a {
   text-decoration: none;
-  background-color: #781BAA;
+  background-color: #781baa;
   color: white;
   padding: 1rem;
   border-radius: 8px;
@@ -25,3 +29,29 @@ body {
 .icon {
   font-size: 4rem;
 }
+
+/* ------------ grid & flex styling ----------- */
+.emojis {
+  --min-col: 20rem;
+
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--min-col), 1fr));
+}
+
+.emoji {
+  display: flex;
+  flex-direction: column;
+}
+.emoji span {
+  order: -1;
+  align-self: center;
+}
+.emoji p {
+  flex-grow: 1;
+}
+/* alt solution to push down the button */
+/* 👇👇👇 */
+/* .emoji a {
+  margin-top: auto;
+} */
